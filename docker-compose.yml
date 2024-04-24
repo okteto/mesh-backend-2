@@ -1,9 +1,5 @@
-endpoints:
-  - path: /
-    service: nginx-mesh-backend-2
-    port: 80
-    
 services:
   nginx-mesh-backend-2:
-    build: .
-    command: /bin/bash -c "envsubst < /etc/nginx/templates/nginx.conf > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+    image: nginx:1.25
+    volumes:
+      - default.conf:/etc/nginx/templates/default.conf.template
