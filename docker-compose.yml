@@ -1,5 +1,5 @@
 services:
-  nginx-mesh-backend-2:
+  mesh-backend-2:
     image: nginx:1.25
     volumes:
       - default.conf:/etc/nginx/templates/default.conf.template
