@@ -1,2 +1,5 @@
+dependencies:
+  - https://github.com/okteto/mesh
+
 deploy:
-  - okteto deploy --build docker-compose.yml
+  compose: docker-compose.yml
