@@ -1,5 +1,8 @@
 dependencies:
-  - https://github.com/okteto/mesh
+  mesh:
+    repository: https://github.com/okteto/mesh
+    wait: true
 
 deploy:
-  compose: docker-compose.yml
+  - okteto deploy -f docker-compose.yml
+  - kubectl rollout restart deployment/mesh
